@@ -1,5 +1,5 @@
-#inputFile = open('dayTwo\daytwo_input.txt')
-inputFile = open('dayTwo\daytwo_small.txt')
+inputFile = open('dayTwo/daytwo_input.txt')
+#inputFile = open('dayTwo/daytwo_small.txt', 'r')
 #inputFile = open('dayTwo\errorLog.txt')
 
 fileContent = (inputFile.read()).splitlines()
@@ -48,12 +48,9 @@ for i in range (len(fileContent)):
         unsafeReports.append(reportList)
 
 for i in range (len(unsafeReports)):
-
-    for j in range (len(currReport)):
-        currReportList = currReport.split(' ')
-        print(currReportList)
+    currReportList = unsafeReports[i]
+    for j in range (len(currReportList)):
         tempHold = currReportList.pop(j)
-        print(currReportList)
 
         if (isSorted(currReportList) and checkAdj(currReportList)):
             safeReports += 1
